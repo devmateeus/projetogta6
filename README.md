@@ -1,48 +1,53 @@
-# Análise de Buscas: GTA 6
+# Análise de Buscas: GTA 6 🎮
 
-Projeto de análise de dados em R que investiga o interesse dos brasileiros pelo **GTA 6**, usando dados reais do Google Trends.
+Este é um projeto que desenvolvi utilizando R para analisar o interesse dos brasileiros pelo **GTA 6**, com dados reais extraídos do Google Trends.
 
-## Objetivo
+A ideia surgiu da vontade de aplicar meus conhecimentos em análise de dados em um tema que está em alta, explorando informações reais, criando visualizações e transformando dados em informações que façam sentido.
 
-Entender como o interesse pelo jogo se distribui pelo Brasil e ao longo do tempo, respondendo perguntas como:
+## 🎯 Objetivo
 
-- Quais estados mais pesquisam por GTA 6?
-- Como o interesse evoluiu nos últimos 5 anos?
-- Quais momentos (trailers, adiamentos, anúncios) provocaram picos de busca?
-- Quais são as buscas relacionadas mais populares?
+Quero entender como o interesse pelo GTA 6 se distribui pelo Brasil e como esse interesse evoluiu ao longo dos últimos anos.
 
-## Dados
+Durante a análise, busco responder algumas perguntas:
 
-Os dados vêm do **Google Trends**, obtidos pelo pacote [`gtrendsR`](https://cran.r-project.org/package=gtrendsR):
+- Quais estados brasileiros mais pesquisam por GTA 6?
+- Como o interesse pelo jogo evoluiu nos últimos 5 anos?
+- Quais acontecimentos provocaram os maiores picos de pesquisa?
+- Quais são os assuntos e termos relacionados mais pesquisados?
 
-- **Termo:** "GTA 6"
-- **Região:** Brasil (`geo = "BR"`)
-- **Período:** últimos 5 anos
+## 📊 Fonte dos dados
 
-> **Atenção:** os valores do Google Trends vão de 0 a 100 e são **relativos**. O 100 representa o pico de interesse dentro do período e da região consultados, e não o número real de buscas.
+Utilizei o **Google Trends** como fonte de dados, realizando a extração por meio do pacote [`gtrendsR`](https://cran.r-project.org/package=gtrendsR).
 
-Os dados tratados são salvos em `data/` para que o script não dependa do Google a cada execução.
+**Configurações utilizadas:**
+- Termo pesquisado: GTA 6
+- Região: Brasil (`geo = "BR"`)
+- Período: últimos 5 anos
 
-## O que foi feito
+Uma observação importante: os dados do Google Trends são apresentados em uma escala de 0 a 100. Isso significa que os valores representam o interesse relativo de pesquisa, e não a quantidade absoluta de buscas.
 
-- [x] Importação dos dados com `gtrendsR`
-- [x] Interesse por estado, com gráfico de barras ordenado (`ggplot2`)
-- [x] Exportação dos dados para CSV
-- [ ] Evolução do interesse ao longo do tempo
-- [ ] Identificação dos picos de busca e dos eventos relacionados
-- [ ] Análise das buscas relacionadas
+Para facilitar as próximas análises, salvei os dados tratados em arquivos CSV dentro da pasta `data/`.
 
-## Principais resultados
+## 🔎 Etapas do projeto
 
-_Em andamento. Adicione aqui as conclusões depois de concluir a análise._
+Até o momento, desenvolvi as seguintes etapas:
 
-<!-- Exemplo:
-![Pesquisa por estado](images/pesquisa_por_estado.png)
--->
+- [x] Extração dos dados utilizando `gtrendsR`.
+- [x] Análise do interesse por estado brasileiro.
+- [x] Criação de gráfico de barras com `ggplot2`.
+- [x] Exportação dos dados para CSV.
+- [ ] Análise da evolução das pesquisas ao longo do tempo.
+- [ ] Identificação dos principais picos de interesse.
+- [ ] Investigação dos acontecimentos relacionados aos picos.
+- [ ] Análise das pesquisas relacionadas ao GTA 6.
 
-## Estrutura do projeto
+## 📈 Principais resultados
 
-```
+Esta seção será atualizada conforme eu avançar no projeto, incluindo gráficos, observações e descobertas obtidas durante a análise.
+
+## 📁 Estrutura do projeto
+
+```text
 projeto-gta6/
 ├── data/
 │   └── pesquisa_por_estado.csv
@@ -51,32 +56,46 @@ projeto-gta6/
 └── README.md
 ```
 
-## Tecnologias
+## 🛠️ Tecnologias utilizadas
 
-- R
-- gtrendsR
-- dplyr
-- ggplot2
+- **R:** linguagem utilizada para desenvolver a análise.
+- **gtrendsR:** extração de dados do Google Trends.
+- **dplyr:** organização e manipulação dos dados.
+- **ggplot2:** criação de gráficos e visualizações.
 
-## Como executar
+## 🚀 Como executar
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/devmateeus/projeto-gta6.git
-   ```
-2. Instale os pacotes (apenas na primeira vez):
-   ```r
-   install.packages(c("gtrendsR", "dplyr", "ggplot2"))
-   ```
-3. Abra o projeto no RStudio e execute `projeto_gta6.R`.
+1. Clone este repositório:
 
-Se o Google bloquear a requisição (erro 429), aguarde alguns minutos ou use o CSV já salvo em `data/`.
+```bash
+git clone https://github.com/devmateeus/projeto-gta6.git
+```
 
-## Limitações
+2. Instale os pacotes necessários no R:
 
-- O Google Trends mostra interesse relativo, não volume absoluto de buscas.
-- Os resultados podem mudar conforme a data em que a consulta é feita.
+```r
+install.packages(c("gtrendsR", "dplyr", "ggplot2"))
+```
 
-## Autor
+3. Abra o projeto no RStudio e execute o arquivo `projeto_gta6.R`.
 
-Mateus Dantas, [LinkedIn](www.linkedin.com/in/mateeusdantas)
+**Observação:** caso o Google Trends bloqueie temporariamente alguma requisição (erro 429), aguarde alguns minutos ou utilize os arquivos CSV já disponíveis na pasta `data/`.
+
+## ⚠️ Limitações
+
+- Os dados representam interesse relativo de pesquisa, não o volume absoluto de buscas.
+- Os resultados podem variar conforme a data em que a consulta é realizada.
+- O Google Trends utiliza amostragem, portanto os valores podem apresentar pequenas variações entre consultas.
+
+## 👨‍💻 Autor
+
+**Mateus Dantas**
+
+Estudante de análise de dados, compartilhando projetos práticos e documentando minha evolução na área.
+
+- [GitHub](https://github.com/devmateeus)
+- [LinkedIn](https://www.linkedin.com/in/mateeusdantas/)
+
+---
+
+*Projeto desenvolvido como parte da minha jornada de aprendizado em análise de dados com R.*
